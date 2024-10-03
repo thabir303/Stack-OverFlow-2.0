@@ -80,7 +80,7 @@ npm install
     ```
     
 ### 7. Access the Application
-- Open a browser and navigate to `http://localhost:3000` (or the port specified in your configuration).
+- Open a browser and navigate to `http://localhost:3000`.
 
 ## Breaking Down to Microservices
 In the next phase, this monolithic application will be broken down into microservices:
