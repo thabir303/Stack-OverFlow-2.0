@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footer {
+  background-color: #1a2e77;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 2px solid transparent; /* Ensure border is defined */
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Include border-color in transition */
+}
+
+/* Default styles for the primary button */
+.btn-primary {
+  background-color: #1a2e77;
+  color: white;
+  border: 2px solid #1a2e77; /* Initial border color */
+}
+
+/* Hover effect for primary button */
+.btn-primary:hover {
+  background-color: white;
+  color: #1a2e77;
+  border-color: black; /* Change border color to black on hover */
+}
+
+/* Default styles for the secondary button */
+.btn-secondary {
+  background-color: white;
+  color: #1a2e77;
+  border: 2px solid #1a2e77; /* Initial border color */
+}
+
+/* Hover effect for secondary button */
+.btn-secondary:hover {
+  background-color: #1a2e77;
+  color: white;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
