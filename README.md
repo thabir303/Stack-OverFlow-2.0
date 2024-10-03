@@ -44,7 +44,7 @@ The server provides several RESTful API endpoints:
 - MongoDB database system.
 
 ### Steps
-1. **Clone the Repository**
+### 1. Clone the Repository
    ```bash
    https://github.com/thabir303/Stack-OverFlow-2.0.git
    cd Stack-OverFlow-2.0
