@@ -25,6 +25,7 @@ const CreatePost = ({ onPostCreated }) => {
       setFile(null);
       setError('');
     } catch (err) {
+      console.error('Submission Error:', err); // Log any submission errors
       setError('Failed to create post. Please try again.');
     }
   };

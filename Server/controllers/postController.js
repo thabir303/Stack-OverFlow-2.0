@@ -19,6 +19,7 @@ exports.createPost = async (req, res) => {
     });
 
     await post.save();
+    console.log('Post created:', post); // Log the created post
     res.status(201).send({ message: 'Post created successfully', data: post });
   } catch (error) {
     console.error('Error creating post:', error);

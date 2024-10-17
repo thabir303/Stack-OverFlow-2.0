@@ -12,7 +12,11 @@ const PORT = process.env.PORT || 8000;
 
 connectDB();
 
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:3000', // Frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'x-auth-token'],
+  }));
 app.use(express.json());
 
 // Serve static files from the uploads directory

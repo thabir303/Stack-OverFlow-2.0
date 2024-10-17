@@ -19,8 +19,8 @@ export const createPost = async (formData) => {
       });
       return response.data;
     } catch (error) {
-      console.error('Error creating post:', error);
-      throw error; // Rethrow the error to handle it in the frontend
+        console.error('API Error:', error.response || error.message); // Log API error
+        throw error; // Rethrow the error to handle it in the frontend
     }
   };
 
