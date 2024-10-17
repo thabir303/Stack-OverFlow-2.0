@@ -1,25 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import NotificationList from '../components/NotificationList';
-import { getNotifications } from '../services/api';
+//src/pages/NotificationsPage.js
+import React from 'react';
+import Notifications from '../components/Notifications';
+import '../styles/Notifications.css';
 
-function NotificationsPage() {
-  const [notifications, setNotifications] = useState([]);
-
-  useEffect(() => {
-    const fetchNotifications = async () => {
-      const data = await getNotifications();
-      setNotifications(data);
-    };
-
-    fetchNotifications();
-  }, []);
-
-  return (
-    <div className="notifications-page">
-      <h1>Notifications</h1>
-      <NotificationList notifications={notifications} />
-    </div>
-  );
-}
+const NotificationsPage = () => (
+  <div className="notifications-page">
+    <Notifications />
+  </div>
+);
 
 export default NotificationsPage;
+

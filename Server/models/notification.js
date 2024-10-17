@@ -1,25 +1,11 @@
+//models/notification.js
 const mongoose = require('mongoose');
 
 const notificationSchema = new mongoose.Schema({
-    postId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Post', 
-        required: true
-    },
-    message: {
-        type: String,
-        required: true
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
-    isRead: {
-        type: Boolean,
-        default: false
-    }
+    postId: { type: mongoose.Schema.Types.ObjectId, ref: 'Post', required: true },
+    message: { type: String, required: true },
+    isRead: { type: Boolean, default: false },
+    createdAt: { type: Date, default: Date.now }
 });
 
-const Notification = mongoose.model('Notification', notificationSchema);
-
-module.exports = Notification;
+module.exports = mongoose.model('Notification', notificationSchema);

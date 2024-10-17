@@ -1,20 +1,25 @@
+//index.js
 require('dotenv').config();
 const express = require('express');
-const app = express();
 const cors = require('cors');
-const connection = require('./db');
-const userRoutes = require('./routes/users'); 
-const authRoutes = require('./routes/auth.js');
-const notificationRoutes = require('./routes/notification'); 
+const { connectDB } = require('./utils/db');
+const routes = require('./routes');
+const path = require('path');
 
-connection();
 
-app.use(express.json());
+const app = express();
+const PORT = process.env.PORT || 8000;
+
+connectDB();
+
 app.use(cors());
+app.use(express.json());
 
-app.use('/api/users', userRoutes);
-app.use('/api/auth', authRoutes);
-app.use('/api/notifications', notificationRoutes); 
+// Serve static files from the uploads directory
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+app.use('/api', routes);
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
